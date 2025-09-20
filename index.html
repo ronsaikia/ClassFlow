@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassFlow - Smart Classroom Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='url(%23grad)'></rect><defs><linearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'></stop><stop offset='100%25' style='stop-color:%233b82f6'></stop></linearGradient></defs><text x='50' y='60' font-family='Arial' font-size='40' fill='%2314b8a6' text-anchor='middle'>‹</text></svg>">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+    
+    <!-- Login Page -->
+    <div id="loginPage" class="login-container">
+        <div class="left-side">
+            <div class="logo">
+                                <svg width="48" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+                                    <rect x="5" y="5" width="50" height="50" rx="12" fill="#3B0057" stroke="#A084E8" stroke-width="4"/>
+                                    <polyline points="35,18 22,30 35,42" fill="none" stroke="#14B8A6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polyline points="35,18 22,30 35,42" fill="none" stroke="#A084E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                ClassFlow
+            </div>
+            <h1 class="main-heading">Smart Classroom for <span class="enhanced">Enhanced</span> Learning</h1>
+            <p class="tagline">Streamline your studies with ClassFlow, get updates and many more resources to help you boost productivity.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">👤</span>
+                    <div class="feature-title">Attendance Automation</div>
+                    <div class="feature-subtitle">Smart facial recognition and real-time tracking.</div>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">📚</span>
+                    <div class="feature-title">Resource Management</div>
+                    <div class="feature-subtitle">Efficient booking and allocation system.</div>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <div class="feature-title">Interactive Learning Tools</div>
+                    <div class="feature-subtitle">Engaging quizzes, polls, and smart boards.</div>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🤖</span>
+                    <div class="feature-title">AI Helper</div>
+                    <div class="feature-subtitle">24/7 intelligent assistant for all queries.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-side">
+            <div class="login-card">
+                <h2 class="welcome-text">Welcome Back</h2>
+                <p class="role-prompt">Choose your role</p>
+                
+                <div class="role-selector">
+                    <button class="role-btn" data-role="student">
+                        <span class="role-emoji">🎓</span>
+                        Student
+                    </button>
+                    <button class="role-btn active" data-role="teacher">
+                        <span class="role-emoji">👨‍🏫</span>
+                        Teacher
+                    </button>
+                    <button class="role-btn" data-role="admin">
+                        <span class="role-emoji">👔</span>
+                        Admin
+                    </button>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" class="form-input" placeholder="John doe" id="username">
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" class="form-input" placeholder="Password" id="password">
+                </div>
+                
+                <button class="signin-btn" onclick="login()">Sign In</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard">
+        <div class="animated-bg"></div>
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+        <div class="floating-orb orb-3"></div>
+        <header class="header">
+            <div class="header-left">
+                <div class="header-logo">
+                                        <svg width="48" height="48" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+                                            <rect x="5" y="5" width="50" height="50" rx="12" fill="#3B0057" stroke="#A084E8" stroke-width="4"/>
+                                            <polyline points="35,18 22,30 35,42" fill="none" stroke="#14B8A6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <polyline points="35,18 22,30 35,42" fill="none" stroke="#A084E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        ClassFlow
+                </div>
+                <span id="dashboardTitle">Teacher Dashboard</span>
+            </div>
+            <div class="header-actions">
+                <button class="action-btn">
+                    <span>🔔</span>
+                    Notifications
+                    <div class="notification-badge">3</div>
+                </button>
+                <button class="action-btn">
+                    <span>📧</span>
+                    Messages
+                    <div class="notification-badge">7</div>
+                </button>
+                <button class="action-btn">
+                    <span>⚙️</span>
+                    Settings
+                </button>
+                <div class="user-info">
+                    <div class="user-avatar" id="userAvatar">JD</div>
+                    <span id="userName">John Doe</span>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <nav class="sidebar">
+                <div class="nav-item active" data-section="overview">
+                    <span>📊</span> Overview
+                </div>
+                <div class="nav-item" data-section="performance">
+                    <span>📈</span> Performance
+                </div>
+                <div class="nav-item" data-section="assignments">
+                    <span>📝</span> Assignments
+                </div>
+                <div class="nav-item" data-section="resources">
+                    <span>🏢</span> Resources
+                </div>
+                <div class="nav-item" data-section="ai-helper">
+                    <span>🤖</span> AI Helper
+                </div>
+            </nav>
+            
+            <div class="content-area">
+                <div class="dashboard-grid">
+                    <div class="main-panel">
+                        <!-- Stats Overview -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-value">142</div>
+                                <div class="stat-label">Total Students</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">87%</div>
+                                <div class="stat-label">Avg Attendance</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">94%</div>
+                                <div class="stat-label">Assignment Rate</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Performance Chart -->
+                        <div class="widget">
+                            <div class="widget-header">
+                                <h3 class="widget-title">Class Performance Tracking</h3>
+                            </div>
+                            
+                            <div class="subject-tabs">
+                                <button class="subject-tab active" data-subject="mathematics">📊 Mathematics</button>
+                                <button class="subject-tab" data-subject="physics">⚛️ Physics</button>
+                                <button class="subject-tab" data-subject="chemistry">🧪 Chemistry</button>
+                                <button class="subject-tab" data-subject="biology">🧬 Biology</button>
+                                <button class="subject-tab" data-subject="english">📚 English</button>
+                                <button class="subject-tab" data-subject="computer">💻 Computer Sc.</button>
+                            </div>
+                            
+                            <div class="chart-tabs">
+                                <button class="chart-tab active" data-chart="performance">Performance Trends</button>
+                                <button class="chart-tab" data-chart="attendance">Attendance</button>
+                                <button class="chart-tab" data-chart="assignments">Assignments</button>
+                            </div>
+                            
+                            <div class="chart-container">
+                                <canvas id="performanceChart" width="400" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="side-panel">
+                        <!-- AI Chatbot -->
+                        <div class="widget">
+                            <div class="widget-header">
+                                <h3 class="widget-title">AI Assistant</h3>
+                            </div>
+                            <div class="chatbot">
+                                <div class="chat-messages" id="chatMessages">
+                                    <div class="chat-message ai">
+                                        Hello! I'm your AI assistant. How can I help you today?
+                                    </div>
+                                </div>
+                                <div class="chat-input-container">
+                                    <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything...">
+                                    <button class="chat-send" onclick="sendMessage()">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Recent Assignments -->
+                        <div class="widget">
+                            <div class="widget-header">
+                                <h3 class="widget-title">Recent Assignments</h3>
+                            </div>
+                            <div class="assignments-list">
+                                <div class="assignment-item">
+                                    <div class="assignment-title">Mathematics Quiz Ch.5</div>
+                                    <div class="assignment-meta">
+                                        <span>Due: Tomorrow</span>
+                                        <span class="status-pending">Pending</span>
+                                    </div>
+                                </div>
+                                <div class="assignment-item">
+                                    <div class="assignment-title">Physics Lab Report</div>
+                                    <div class="assignment-meta">
+                                        <span>Due: Next Week</span>
+                                        <span class="status-completed">Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Resources -->
+                        <div class="widget">
+                            <div class="widget-header">
+                                <h3 class="widget-title">Subject Resources</h3>
+                            </div>
+                            <div class="resources-grid">
+                                <div class="resource-item">
+                                    <span class="resource-icon">📊</span>
+                                    <div class="resource-name">Math Lab</div>
+                                    <div class="resource-status">Available</div>
+                                    <div class="resource-details">Graphing calculators, geometry sets</div>
+                                </div>
+                                <div class="resource-item">
+                                    <span class="resource-icon">⚛️</span>
+                                    <div class="resource-name">Physics Lab</div>
+                                    <div class="resource-status unavailable">Occupied</div>
+                                    <div class="resource-details">Until 3:30 PM - Optics exp.</div>
+                                </div>
+                                <div class="resource-item">
+                                    <span class="resource-icon">🧪</span>
+                                    <div class="resource-name">Chemistry Lab</div>
+                                    <div class="resource-status">Available</div>
+                                    <div class="resource-details">Safety equipment ready</div>
+                                </div>
+                                <div class="resource-item">
+                                    <span class="resource-icon">💻</span>
+                                    <div class="resource-name">Computer Lab</div>
+                                    <div class="resource-status">18/25 Free</div>
+                                    <div class="resource-details">Programming tools available</div>
+                                </div>
+                                <div class="resource-item">
+                                    <span class="resource-icon">📽️</span>
+                                    <div class="resource-name">Smart Boards</div>
+                                    <div class="resource-status">3/5 Available</div>
+                                    <div class="resource-details">Interactive displays ready</div>
+                                </div>
+                                <div class="resource-item">
+                                    <span class="resource-icon">📚</span>
+                                    <div class="resource-name">Library</div>
+                                    <div class="resource-status">Open</div>
+                                    <div class="resource-details">Digital & physical resources</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
